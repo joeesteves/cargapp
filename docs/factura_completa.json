@@ -1,0 +1,60 @@
+{
+  "IdentificacionExterna": "Tipo: String, Obligatorio: No, Descripción: Identificación externa",
+  "EmpresaCodigo": "Tipo: String, Obligatorio: Si, Consulte la API /Empresa/list",
+  "Fecha": "Tipo: Date, Obligatorio: Si, Descripción: aaaa-mm-dd",
+  "FechaComprobante": "Tipo: Date, Obligatorio: Si, Descripción: aaaa-mm-dd",
+  "Proveedor": "Tipo: String, Obligatorio: Si, Consulte la API /Proveedor/list",
+  "CondicionPagoCodigo": "Tipo: String, Obligatorio: Si, Consulte la API /CondicionPago/list",
+  "TransaccionTipoCodigo": "(String) Obligatorio. Valor a completar: OPER ",
+  "TransaccionSubtipoCodigo": "(String) Obligatorio. Consulte la API /TransaccionSubtipo/list",
+  "WorkflowCodigo": "Tipo: String, Obligatorio: Si, Descripción:CPRA-PROD ",
+  "Nombre": "Tipo: String. Sólo para GET",
+  "Descripcion": "Tipo: String, Obligatorio: No",
+  "NumeroComprobante": "Tipo: String, Obligatorio: No, Descripción: Numero de documento",
+  "MonedaCodigo": "Tipo: String, Obligatorio: Si, Consulte la API /Moneda/list",
+  "ComprobanteTipoImpositivoCodigo": "Tipo: String, Obligatorio: Si, Consulte la API /ComprobanteTipoImpositivo/list",
+  "CAE": "Tipo: Int, Obligatorio: Si, Descripción: ##############",
+  "CAEFechaVto": "Tipo: Date, Obligatorio: Si, Descripción: aaaa-mm-dd",
+  "Productos": [
+    {
+      "ProductoCodigo": "Tipo: String, Obligatorio: Si, Consulte la API /Producto/list",
+      "Cantidad": "Tipo: Int, Obligatorio: Si, Descripción: ####",
+      "Precio": "Tipo: Decimal, Obligatorio: Si, Descripción: ##.###",
+      "DimensionDistribucion": [
+        {
+          "dimensionCodigo": "(Tipo) String, (Obligatorio) Si, si lo requiere la transacción. Consulte la API /Dimension/list",
+          "distribucionCodigo": "(Tipo) String, (Obligatorio) No, Pasar el codigo de la dimensión distribucion en caso de querer pasar una distribución por default. No sería necesario pasar distribucionItems",
+          "distribucionItems": [
+            {
+              "codigo": "(Tipo) String, (Obligatorio) No, Codigo de registro de la dimension. Ej.: Código de un registro perteneciente a la dimensión Centro de Costo.",
+              "porcentaje": "(Tipo) Numero, (Obligatorio) No, Porcentaje de distribución"
+            }
+          ]
+        }
+      ],
+      "vinculacionOrigen": "(String), No Obligatorio. Identificacion Externa de la transaccion origen a vincular"
+    }
+  ],
+  "Conceptos": [
+    {
+      "ConceptoCodigo": "(String) Obligatorio. Consulte la API /Concepto/list",
+      "ImporteEditable": "(Boolean) Indique 1 para que tome en cuenta el ConceptoImporte y el ConceptoImporteGravado. Indique 0 para que se calcule automáticamente según la tasa",
+      "ConceptoImporte": "(Decimal) Obligatorio si indicó 1 en ImporteEditable. Con formato ##.###",
+      "ConceptoImporteGravado": "(Decimal) Obligatorio si indicó 1 en ImporteEditable. Con formato ##.###"
+    }
+  ],
+  "Retenciones": [
+    {
+      "RetencionImporte": "Tipo: Decimal, Obligatorio: Si, Descripción: ##.###",
+      "Comprobante": "Tipo: String, Obligatorio: Si",
+      "ISAR": "Tipo: Decimal, Obligatorio: No, Descripción: ##.###",
+      "RetencionCodigo": "Tipo: String, Obligatorio: Si, Consulte la API /Retencion/list",
+      "TipoRetencionCodigo": " PADRE Tipo: String, Obligatorio: Si"
+    }
+  ],
+  "C1116B_LocalidadID": "Atributo Adicional",
+  "AFIPDGI_Cosecha": "Atributo Adicional",
+  "USR_NumeroLabor": "Atributo Adicional",
+  "USR_Establecimiento": "Atributo Adicional",
+  "USR_FechaTrabajo": "Atributo Adicional"
+}

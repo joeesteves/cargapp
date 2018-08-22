@@ -1,0 +1,37 @@
+{
+    "IdentificacionExterna": "1234",
+    "EmpresaCodigo": "INT",
+    "Fecha": "2018-08-22",
+    "FechaComprobante": "2018-08-22",
+    "Proveedor": "AZUl",
+    "CondicionPagoCodigo": "15",
+    "TransaccionTipoCodigo": "OPER",
+    "TransaccionSubtipoCodigo": "FC",
+    "WorkflowCodigo": "CPRA-SERCON",
+    "NumeroComprobante": "A-5555-12341234",
+    "MonedaCodigo": "PES",
+    "ComprobanteTipoImpositivoCodigo": "81",
+    "ImporteTotal": "3630",
+    "ImporteTotalControl": "3630",
+    "Productos": [
+        {
+            "ProductoCodigo": "GASOIL",
+            "Cantidad": "100",
+            "Precio": "30",
+            "DimensionDistribucion": [
+                {
+                    "dimensionCodigo": "DIMCTC",
+                    "distribucionCodigo": "ADMIN"
+                }
+            ]
+        }
+    ],
+    "Conceptos": [
+        {
+            "ConceptoCodigo": "COMPRA_IVA_21",
+            "ImporteEditable": "1",
+            "ConceptoImporte": "630",
+            "ConceptoImporteGravado": "3000"
+        }
+    ]
+}
